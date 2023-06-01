@@ -1,22 +1,46 @@
 import React from "react"
-import logo from './../../logo.svg'
+import'./header.css'
+
 
 const Header = () =>{
     return(
-        <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <header className="main-header">
+      <nav>
+        <ul>
+          <div>
+            <li><a href="/home">V I K I N G S <br/> BEERHOUSE </a></li>
+          </div>
+          <div >
+            <li><a href="/aboutus">SOBRE</a></li>
+            <li><a href="/product/nossoproduto">NOSSO PRODUTOS</a></li>
+            <li><a href="/login/minha-conta">MINHA CONTA</a></li> 
+          </div>
+          <div>
+            <li><a href="#"><img src="/images/Logo/Logo sem fundo 600x600 sem opacidade.png" alt="" className="imagem-logo" width="120px" height="100px"/></a></li>
+            <div id="pesquisa">
+              <form method="GET" action="/search" class="search-form">
+                <img src="/images/icon/lupa.png" alt="Meus Pedidos" width="20"/>
+                <input type="text" name="keywords" placeholder="Pesquisar" className="search-form_input"/>
+              </form>
+            </div>
+          </div>
+          <div>
+            <li><a href="/login">
+            <center><img src="/images/icon/avatar.png" alt="Minha Conta" width="30"/></center>
+            <p>FAÇA SEU LOGIN</p>
+          </a>
+        </li>
+          </div>
+          <div>
+            <li><a href="/carrinho">
+              <center><img src="/images/icon/Shopping Cart.png" alt="Meus Pedidos" width="30"/></center>
+                <p>MEU CARRINHO</p>
+            </a>
+          </li>
+          </div>
+        </ul>
+      </nav>
+    </header>
     )
 }
 
