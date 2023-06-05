@@ -25,14 +25,7 @@ const Header = () =>{
             <div id="pesquisa">
               <form method="GET" action="/search" className="search-form">
                 <img src="/images/icon/lupa.png" alt="Meus Pedidos" width="20"/>
-<<<<<<< HEAD:src/components/Header/index.jsx
                 <input type="text" name="keywords" placeholder="Pesquisar" className="search-form_input" value={keywords} onChange={ e => setKeywords(e.target.value)}/>
-=======
-                <input type="text" 
-                name="keywords"
-                placeholder="Pesquisar" 
-                className="search-form_input"/>
->>>>>>> 4b9ea88dc91dd39a32328cdd2a9d1efa99eda67d:vb-frontend/src/components/Header/index.jsx
               </form>
             </div>
           </div>
