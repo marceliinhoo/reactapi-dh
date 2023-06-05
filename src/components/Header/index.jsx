@@ -1,8 +1,13 @@
-import React from "react"
+import React, { useState} from "react"
 import'./header.css'
 
 
 const Header = () =>{
+
+    const [keywords, setKeywords] = useState()
+
+
+
     return(
       <header className="main-header">
       <nav>
@@ -20,7 +25,7 @@ const Header = () =>{
             <div id="pesquisa">
               <form method="GET" action="/search" class="search-form">
                 <img src="/images/icon/lupa.png" alt="Meus Pedidos" width="20"/>
-                <input type="text" name="keywords" placeholder="Pesquisar" className="search-form_input"/>
+                <input type="text" name="keywords" placeholder="Pesquisar" className="search-form_input" value={keywords} onChange={ e => setKeywords(e.target.value)}/>
               </form>
             </div>
           </div>
