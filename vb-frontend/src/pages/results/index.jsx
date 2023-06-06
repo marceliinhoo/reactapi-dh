@@ -8,56 +8,38 @@ const Create = () => {
         <>
             <Header/>
 
-			<div className="container products-wrapper">
-				<div className="row">
-					<div className="col-12">
-						<h2 className="products-title">Adicionar Novos Produtos</h2>
-					</div>
-				</div>
-				<div className="col-12">
-{/* 
-          <% if (typeof errors !== 'undefined') { %>
-            <ul>
-              <% for(let error in errors) { %>
-                <li class="error-product"> <%= errors[error].msg %> </li>
-              <% } %>
-            </ul>
-          <% } %> */}
-
-					<form action="/product" method="POST" enctype="multipart/form-data">
-						<div className="row product-detail">
-							<div className="col-12 col-md-6">
-								<label for="name" className="form-label">Nome:</label>
-								<input type="text" id="name" name="name" placeholder="Informe o nome do produto" className="form-input"/>
-							</div>
-							<div className="col-12 col-md-6">
-								<label for="type" className="form-label">Tipo de Cerveja:</label>
-								<select name ='id_type' className="form-label">
-									<option value="1">Stout</option>
-									<option value="2">Pilsen</option>
-									<option value="3">Lager</option>
-									<option value="4">Pale</option>
-							</select>
-							</div> 
-							<div class="col-12 col-md-6">
-								<label for="price" className="form-label">Preço:</label>
-								<input type="number" id="price" name="price" placeholder="Informe o preço do produto" className="form-input"/>
-							</div>
-							<div class="col-12">
-								<label for="description" className="form-label">Descrição:</label>
-								<textarea name="description" id="description" className="form-input"></textarea>
-							</div>
-							<div class="col-12 col-md-6">
-								<label for="image" className="form-label">Imagem:</label>
-								<input type="file" id="image" name="image" className="form-input"/>
-							</div>
-							<div class="col-12">
-								<button type="submit" className="buy-now-button">Salvar</button>
-							</div>
-						</div>
-					</form>
-				</div>
-			</div>
+			<div class="container products-wrapper">
+        <div class="row">
+          <div class="col-12">
+            <h2 class="products-title">Resultados da pesquisa: <%= search %></h2>
+          </div>
+          <% if (products.length> 0) {
+            products.forEach((product) => {
+            let finalPrice = (product.price * ((100 - product.discount) / 100)).toFixed(0)
+          %>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <section class="product-box">
+              <a href="/product/detail/<%= `${product.id}/` %>">
+                <figure class="product-box_image">
+                  <img src="/images/Produtos/<%= product.image %>" alt="imagen do produto"/>
+                </figure>
+               <article class="product-box_data">
+                  <p>
+                    {/* <%= product.name %> */}
+                  </p>
+                </article>
+              </a>
+            </section>
+          </div>
+        /* <% })} else { %>  */
+            <div class="col-12">
+              <h2 class="products-title" style="color: red;">Ei!! Infelizmente não foi possível encontrar esse produto. <br><br>
+                Veja se digitou corretamente o que procura. Aqui vai alguma sugestões de pesquisa:<br><br>
+              Beer; Double...</h2>
+            </div>
+          <% } %>
+        </div>
+      </div>
 
            <Footer/>
         </>

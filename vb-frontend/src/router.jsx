@@ -6,12 +6,19 @@ import {
 } from 'react-router-dom'
 import Home from "./pages/Home"
 import Create from "./pages/Create"
+import Year from "./pages/Year"
+import Update from "./pages/Update"
 
 
 const Router = () => {
     return (
         <BrowserRouter>
             <Routes>
+            <Route
+                exact
+                path="/"
+                element={<Year/>}
+                />
                 <Route
                 exact
                 path="/home"
@@ -30,7 +37,7 @@ const Router = () => {
                   <Route
                 exact
                 path="/product-update"
-                element={null}
+                element={<Update/>}
                 />
             </Routes>
         </BrowserRouter>
