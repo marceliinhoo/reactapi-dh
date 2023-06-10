@@ -7,11 +7,11 @@ const Footer = () => {
         <footer>
             <div className="caixafooter">
                 <div className="footer-img">
-                    <img src="/images/Logo/Logo sem fundo 600x600 sem opacidade.png" width="150" alt=""/>
+                    <img src={`http://localhost:3000/images/Logo/Logosemfundo600x600semopacidade.png`} width="150" alt=""/>
                 </div>
 
                 <div className='footer-pagto'>
-                    <img src="/images/icon/formas.de.pagamento.png" width="300" alt=""/>
+                    <img src={`http://localhost:3000/images/icon/formasdepagamento.png`} width="300" alt=""/>
                 </div>
                 <div className="footer-dados">
                     <ul>

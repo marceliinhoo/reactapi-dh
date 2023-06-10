@@ -8,7 +8,7 @@ import Home from "./pages/Home"
 import Create from "./pages/Create"
 import Year from "./pages/Year"
 import Update from "./pages/Update"
-
+/* import Product from "./pages/Product" */
 
 const Router = () => {
     return (
@@ -39,6 +39,11 @@ const Router = () => {
                 path="/product-update"
                 element={<Update/>}
                 />
+{/*                 <Route
+                exact
+                path="/product/nossoproduto"
+                element={<Product/>}
+                /> */}
             </Routes>
         </BrowserRouter>
     )

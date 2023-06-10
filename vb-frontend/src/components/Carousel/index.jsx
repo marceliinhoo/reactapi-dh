@@ -19,14 +19,14 @@ class Carousel extends React.Component {
         <Slider {...settings}>
           <div>
             <a href="/product/nossoproduto">
-              <img src="/images/Logo/Seja.Bem.Vindo.png" className="img-fluid" alt="..." />
+              <img src={`http://localhost:3000/images/Logo/Seja.Bem.Vindo.png`} className="img-fluid" alt="..." />
             </a>
           </div>
           <div>
-            <img src="/images/Diversas/nova.cerveja.png" className="img-fluid" alt="..." />
+          <img src={`http://localhost:3000/images/Diversas/nova.cerveja.png`} className="img-fluid" alt="..." />
           </div>
           <div>
-            <img src="/images/Diversas/em.breve.png" className="img-fluid" alt="..." />
+          <img src={`http://localhost:3000/images/Diversas/em.breve.png`} className="img-fluid" alt="..." />
           </div>
         </Slider>
         <Footer/>
