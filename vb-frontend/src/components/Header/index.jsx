@@ -1,26 +1,28 @@
-import React, { useState} from "react"
+import React, { useState, useEffect } from "react"
+import { Link } from "react-router-dom"
 import'./header.css'
 
 
-const Header = () =>{
+const Header = () => {
+  const [keywords, setKeywords] = useState('')
 
-    const [keywords, setKeywords] = useState()
-
+  useEffect(() => {
+  }, [])
 
     return(
       <header className="main-header">
       <nav>
         <ul>
           <div>
-            <li><a href="/home">V I K I N G S <br/> BEERHOUSE </a></li>
+            <li><Link to="/home">V I K I N G S <br/> BEERHOUSE </Link></li>
           </div>
           <div >
-            <li><a href="/aboutus">SOBRE</a></li>
-            <li><a href="/product/nossoproduto">NOSSO PRODUTOS</a></li>
-            <li><a href="/login/minha-conta">MINHA CONTA</a></li> 
+            <li><Link to="/aboutus">SOBRE</Link></li>
+            <li><Link to="/product/nossoproduto">NOSSO PRODUTOS</Link></li>
+            <li><Link to="/login/minha-conta">MINHA CONTA</Link></li> 
           </div>
           <div>
-            <li><a href="#"><img src={`http://localhost:3000/images/Logo/Logosemfundo600x600semopacidade.png`} alt="" className="imagem-logo" width="120px" height="100px"/></a></li>
+            <li><Link to="/home"><img src={`http://localhost:3000/images/Logo/Logosemfundo600x600semopacidade.png`} alt="" className="imagem-logo" width="120px" height="100px"/></Link></li>
             <div id="pesquisa">
               <form method="GET" action="/search" className="search-form">
                 <img src={`http://localhost:3000/images/icon/lupa.png`} alt="Meus Pedidos" width="20"/>
@@ -29,17 +31,17 @@ const Header = () =>{
             </div>
           </div>
           <div>
-            <li><a href="/login">
+            <li><Link to="/login">
             <center><img src={`http://localhost:3000/images/icon/avatar.png`} alt="Minha Conta" width="30"/></center>
             <p>FAÇA SEU LOGIN</p>
-          </a>
+          </Link>
         </li>
           </div>
           <div>
-            <li><a href="/carrinho">
+            <li><Link to="/carrinho">
               <center><img src={`http://localhost:3000/images/icon/ShoppingCart.png`} alt="Meus Pedidos" width="30"/></center>
                 <p>MEU CARRINHO</p>
-            </a>
+            </Link>
           </li>
           </div>
         </ul>

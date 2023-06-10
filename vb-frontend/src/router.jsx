@@ -8,7 +8,8 @@ import Home from "./pages/Home"
 import Create from "./pages/Create"
 import Year from "./pages/Year"
 import Update from "./pages/Update"
-/* import Product from "./pages/Product" */
+import Product from "./pages/Product"
+import Login from "./pages/Login"
 
 const Router = () => {
     return (
@@ -39,11 +40,16 @@ const Router = () => {
                 path="/product-update"
                 element={<Update/>}
                 />
-{/*                 <Route
+                <Route
                 exact
                 path="/product/nossoproduto"
                 element={<Product/>}
-                /> */}
+                />
+                <Route
+                exact
+                path="/login"
+                element={<Login/>}
+                />
             </Routes>
         </BrowserRouter>
     )

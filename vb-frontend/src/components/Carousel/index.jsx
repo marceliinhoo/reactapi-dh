@@ -3,6 +3,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Footer from "../../components/Footer"
+import { Link } from "react-router-dom"
 
 class Carousel extends React.Component {
   render() {
@@ -18,9 +19,9 @@ class Carousel extends React.Component {
       <div className="banner">
         <Slider {...settings}>
           <div>
-            <a href="/product/nossoproduto">
+            <Link to="/product/nossoproduto">
               <img src={`http://localhost:3000/images/Logo/Seja.Bem.Vindo.png`} className="img-fluid" alt="..." />
-            </a>
+            </Link>
           </div>
           <div>
           <img src={`http://localhost:3000/images/Diversas/nova.cerveja.png`} className="img-fluid" alt="..." />
