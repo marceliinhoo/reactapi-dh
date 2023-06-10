@@ -11,7 +11,7 @@ const Update = () => {
 			<div class="container products-wrapper">
         <div class="row">
           <div class="col-12">
-            <h2 class="products-title">Você está editando: <i>{/* <%= productToEdit.name %> */}</i></h2>
+            <h2 class="products-title">Você está editando: <i>{/* productToEdit.name */}</i></h2>
           </div>
         </div>
         <div class="col-12">
@@ -54,7 +54,7 @@ const Update = () => {
                   id="description"
                   name="description"
                   class="form-input"
-                >{/* <%= productToEdit.description %> */}</textarea>
+                >{/* productToEdit.description */}</textarea>
               </div>
               <div class="col-12 col-md-6">
 								<label for="image" class="form-label">Imagem:</label>

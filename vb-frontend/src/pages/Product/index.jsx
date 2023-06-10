@@ -13,7 +13,8 @@ const Product = () => {
   }, [])
 
   const loadProducts = async () => {
-    const response = await api.get('Product')
+    const response = await api.get('product/nossoproduto')
+ 
     setProducts(response.data)
   }
 
@@ -35,11 +36,11 @@ const Product = () => {
                   state={{ id: product.id }}
                 >
                   <figure className="product-box_image">
-                    <img src={`http://localhost:3000/images/products/${product.image}`} alt="imagen do produto" />
+                    <img src={`http://localhost:3000/images/Produtos/${product.image}`} alt="imagen do produto" />
                   </figure>
                   <article className="product-box_data">
                     <h2>
-                      {(product.price * ((100 - product.discount) / 100)).toFixed(0)}
+                      {(product.price * ((100) / 100)).toFixed(2)}
                     </h2>
                     <p>
                       {product.name}
