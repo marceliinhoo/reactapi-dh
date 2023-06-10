@@ -10,6 +10,7 @@ import Year from "./pages/Year"
 import Update from "./pages/Update"
 import Product from "./pages/Product"
 import Login from "./pages/Login"
+import CreateUser from "./pages/CreateUser"
 
 const Router = () => {
     return (
@@ -49,6 +50,11 @@ const Router = () => {
                 exact
                 path="/login"
                 element={<Login/>}
+                />
+                <Route
+                exact
+                path="/formulario"
+                element={<CreateUser/>}
                 />
             </Routes>
         </BrowserRouter>

@@ -1,76 +1,96 @@
-import React from "react"
-import Footer from "../../components/Footer"
+import React, { useState } from "react"
+
 import Header from "../../components/Header"
-import "./product-update-form.css"
+import Footer from "../../components/Footer"
+import "./telaDeCadastro.css"
 
-const Update = () => {
-    return (
-        <>
-            <Header/>
+const CreateUser = () => {
+  const [name, setName] = useState()
+  const [email, setEmail] = useState()
+  const [password, setPassword] = useState()
+  const [pwdConfirm, setPwdConfirm] = useState()
+  const [dt_nasc, setDtNasc] = useState()
 
-			<div class="container products-wrapper">
-        <div class="row">
-          <div class="col-12">
-            <h2 class="products-title">Você está editando: <i>{/* <%= productToEdit.name %> */}</i></h2>
-          </div>
+  return (
+
+    <>
+
+      <Header />
+      
+      <div class="card-form">
+      <div class="column">
+          <img  class="image"src={`http://localhost:3000/images/Logo/Logosemfundo600x600semopacidade.png`} alt="logotipo"/>
+          <div class="description-empresa">
+          <h5>Faça parte da nossa <br/><strong>BEERHOUSE</strong></h5>
+          <br/>
+          <p>Receba uma  newsletter com dicas de <br/> fabricação e receitas para harmonização em <br/>diversas ocasiões. <br/>
+          Surpreenda o paladar de seus amigos <br/> e família.<br/>
+          Todo mês um catálogo exclusivo de <br/> cervejas dos maiores fabricantes <br/> artesanais do Brasil.</p>
         </div>
-        <div class="col-12">
-          <form action="/product/<%= productToEdit.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
-            <div class="row product-detail">
-              <div class="col-12 col-md-6">
-                <label for="name" class="form-label">Nome:</label>
-                <input
-                  id="name"
+        </div>
+    <div class="conteudo">
+      <div class="header">
+        <h2>Seja um VIKINGS</h2>
+      </div>
+      <form action="/formulario" method="POST">
+      <div class="form-control">
+      <input id="dataNasc"
+                  className="form-input"
+                  type="date"
+                  name="dt_nasc"
+                  placeholder="Data de Nascimento"
+                  value={dt_nasc}
+                  onChange={e => setDtNasc(e.target.value)}
+                />
+       </div> 
+        <div class="form-control">
+          <input  id="username"
+                  className="form-input"
                   type="text"
                   name="name"
-                  placeholder="Informe o nome do produto"
-                  class="form-input"
-                  value="<%= productToEdit.name %>"
+                  placeholder="Nome Completo"
+                  value={name}
+                  onChange={e => setName(e.target.value)}
                 />
-              </div>
-              <div class="col-12 col-md-6">
-								<label for="type" class="form-label">Tipo de Cerveja:</label>
-								<select name ='id_type' class="form-label">
-									<option value="1">Stout</option>
-									<option value="2">Pilsen</option>
-									<option value="3">Lager</option>
-									<option value="4">Pale</option>
-							</select>
-              </div>
-              <div class="col-12 col-md-6">
-                <label for="price" class="form-label">Preço:</label>
-                <input
-                  id="price"
-                  type="number"
-                  name="price"
-                  placeholder="Informe o preço do produto"
-                  class="form-input"
-                  value="<%= productToEdit.price %>"
-                />
-              </div>
-              <div class="col-12">
-                <label for="description" class="form-label">Descrição:</label>
-                <textarea
-                  id="description"
-                  name="description"
-                  class="form-input"
-                >{/* <%= productToEdit.description %> */}</textarea>
-              </div>
-              <div class="col-12 col-md-6">
-								<label for="image" class="form-label">Imagem:</label>
-								<input type="file" id="image" name="image" class="form-input"/>
-							</div>
-              <div class="col-12">
-                <button type="submit" class="buy-now-button">Salvar</button>
-              </div>
-            </div>
-          </form>
         </div>
+        <div class="form-control">
+          <input id="email"
+                  className="form-input"
+                  type="text"
+                  name="email"
+                  placeholder="Digite seu email"
+                  value={email}
+                  onChange={e => setEmail(e.target.value)}
+                />
+        </div>
+        <div class="form-control">
+          <input id="password"
+                  className="form-input"
+                  type="password"
+                  name="password"
+                  placeholder="Digite sua senha"
+                  value={password}
+                  onChange={e => setPassword(e.target.value)}
+                />
+        </div>
+        <div class="form-control">
+          <input id="pwdConfirm"
+                  className="form-input"
+                  type="password"
+                  placeholder="Confirme sua Senha"
+                  value={pwdConfirm}
+                  onChange={e => setPwdConfirm(e.target.value)}
+                />
+        </div>
+        <div>
+          <button type="submit" class="enviar">Enviar</button>
       </div>
-
-           <Footer/>
-        </>
+      </form>
+    </div>
+</div>
+      <Footer />
+    </>
     )
-
 }
-export default Update
+
+export default CreateUser
