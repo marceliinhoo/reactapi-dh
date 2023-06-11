@@ -25,7 +25,7 @@ const Login = () => {
 
       alert('Login realizado!')
 
-      navigate('/home')
+      navigate('/')
 
     } catch (error) {
       alert(error.response.data)
@@ -60,8 +60,6 @@ const Login = () => {
                 onChange={e => setPassword(e.target.value)}
               />
 	  </div>
-	  <div class="esqueci-senha">
-		<Link to="#" id="forgot-pass">Esquecer a senha?</Link></div>
 		<button type="submit" onClick={handleLogin}> Entrar </button>
 	  <div class="register-container">
 			<Link to="/formulario">Criar Conta</Link>

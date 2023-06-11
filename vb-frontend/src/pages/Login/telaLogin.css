@@ -4,7 +4,6 @@
   width: 600px;
   margin-left: auto;
   margin-right: auto;
-  padding: 25px 50px;
   margin-top: 10vh;
   border-radius: 10px;
   text-align: center;
@@ -28,15 +27,17 @@ h1{
 .acess-login input{
  background-color: #F9E000;;
  display:block;
- margin-bottom: 25px;
+ margin-bottom: 30px;
  border-radius: 25px;
  color: #000000;
  font-family: 'Arial';
  font-style: normal;
  font-weight: 400;
- font-size: 25px;
+ font-size: 20px;
  border-color: yellow;
  text-align: center;
+  height: 40px;
+  width: 383px;
 } 
 .esqueci-senha a {
   font-family: 'Abel';

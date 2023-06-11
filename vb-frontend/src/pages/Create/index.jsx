@@ -8,22 +8,13 @@ const Create = () => {
         <>
             <Header/>
 
-			<div className="container products-wrapper">
+			<div className="container products-create">
 				<div className="row">
 					<div className="col-12">
 						<h2 className="products-title">Adicionar Novos Produtos</h2>
 					</div>
 				</div>
 				<div className="col-12">
-{/* 
-          <% if (typeof errors !== 'undefined') { %>
-            <ul>
-              <% for(let error in errors) { %>
-                <li class="error-product"> <%= errors[error].msg %> </li>
-              <% } %>
-            </ul>
-          <% } %> */}
-
 					<form action="/product" method="POST" enctype="multipart/form-data">
 						<div className="row product-detail">
 							<div className="col-12 col-md-6">
