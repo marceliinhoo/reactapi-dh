@@ -8,7 +8,7 @@ const Update = () => {
         <>
             <Header/>
 
-			<div class="container products-wrapper">
+			<div class="container products-update">
         <div class="row">
           <div class="col-12">
             <h2 class="products-title">Você está editando: <i>{/* productToEdit.name */}</i></h2>

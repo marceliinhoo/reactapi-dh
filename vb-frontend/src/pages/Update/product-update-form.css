@@ -1,5 +1,13 @@
+.products-update {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 250px;
+    margin-right: 250px;
+    background-color: black;
+  }
+
 .products-title{
-    font-family: 'Abel';
+    font-family: 'Arial';
     font-style: normal;
     font-weight: 400;
     font-size: 40px;
@@ -20,7 +28,7 @@
     color: #fff;
     font-size: 14px;
     width: 100%;
-    font-family: 'Abel';
+    font-family: 'Arial';
     font-style: normal;
     font-weight: 400;
     font-size: 25px;
@@ -38,11 +46,20 @@
 
 .error-product li{
     color: #fc0000;  
-    font-family: 'Abel';
+    font-family: 'Arial';
     font-style: normal;
     font-weight: 400;
     font-size: 15px; 
 }
 textarea {
     resize: auto;
+}
+.product-detail select{ 
+    border: 2px solid #f0f0f0;
+    display: block;
+    border-radius: 10px;
+    font-size: 14px;
+    width: 100%;
+    padding: 10px;
+    color: black;
 }
