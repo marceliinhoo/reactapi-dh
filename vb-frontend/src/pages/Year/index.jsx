@@ -1,7 +1,20 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
+import api from "../../services/api"
 import "./validacao.css"
 
 const Year = () => {
+  const [ageValid, setAge] = useState([])
+
+  useEffect(() => {
+    yearValid()
+  }, [])
+
+  const yearValid = async () => {
+    const response = await api.post('verificar-idade"')
+ 
+    setAge(response.data)
+  }
+
     return (
         <>
             <div className="home-age">

@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom'
 import Home from "./pages/Home"
 import Create from "./pages/Create"
-import Year from "./pages/Year"
+/* import Year from "./pages/Year" */
 import Update from "./pages/Update"
 import Product from "./pages/Product"
 import Login from "./pages/Login"
@@ -16,14 +16,14 @@ const Router = () => {
     return (
         <BrowserRouter>
             <Routes>
-            <Route
+{/*             <Route
                 exact
                 path="/"
                 element={<Year/>}
-                />
+                /> */}
                 <Route
                 exact
-                path="/home"
+                path="/"
                 element={<Home/>}
                 />
                  <Route
