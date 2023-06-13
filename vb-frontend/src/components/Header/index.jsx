@@ -26,7 +26,12 @@ const Header = () => {
             <div id="pesquisa">
               <form method="GET" action="/search" className="search-form">
                 <img src={`http://localhost:3000/images/icon/lupa.png`} alt="Meus Pedidos" width="20"/>
-                <input type="text" name="keywords" placeholder="Pesquisar" className="search-form_input" value={keywords} onChange={ e => setKeywords(e.target.value)}/>
+                <input type="text" 
+                name="keywords" 
+                placeholder="Pesquisar" 
+                className="search-form_input"
+                 value={keywords} 
+                 onChange={ e => setKeywords(e.target.value)}/>
               </form>
             </div>
           </div>

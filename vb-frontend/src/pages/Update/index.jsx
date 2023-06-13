@@ -1,76 +1,117 @@
-import React from "react"
-import Footer from "../../components/Footer"
+import React, { useState, useEffect } from "react"
+import { useLocation } from 'react-router-dom'
 import Header from "../../components/Header"
-import "./product-update-form.css"
+import Footer from "../../components/Footer"
+import api from "../../services/api"
 
 const Update = () => {
-    return (
-        <>
-            <Header/>
+  const location = useLocation()
 
-			<div class="container products-update">
-        <div class="row">
-          <div class="col-12">
-            <h2 class="products-title">Você está editando: <i>{/* productToEdit.name */}</i></h2>
+  const [name, setName] = useState('')
+  const [id_type, setIdProductType] = useState(1)
+  const [price, setPrice] = useState(0)
+  const [description, setDescription] = useState('')
+  const [product, setProduct] = useState()
+
+  useEffect(() => {
+    loadProduct()
+  }, [])
+
+  const loadProduct = async () => {
+    const response = await api.get(`product/${location.state.id}`)
+
+    setName(response.data.name)
+    setIdProductType(response.data.productType.id)
+    setPrice(response.data.price)
+    setDescription(response.data.description)
+    setProduct(response.data)
+  }
+  return (
+    <>
+      <Header />
+
+      {product ? (
+        <div className="container products-wrapper">
+          <div className="row">
+            <div className="col-12">
+              <h2 className="products-title">Você está editando: <i>{product.name}</i></h2>
+            </div>
           </div>
-        </div>
-        <div class="col-12">
-          <form action="/product/<%= productToEdit.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
-            <div class="row product-detail">
-              <div class="col-12 col-md-6">
-                <label for="name" class="form-label">Nome:</label>
+          <div className="col-12">
+            <div className="row product-detail">
+              <div className="col-12 col-md-6">
+                <label htmlFor="name" className="form-label">Nome:</label>
                 <input
                   id="name"
+                  className="form-input"
                   type="text"
                   name="name"
                   placeholder="Informe o nome do produto"
-                  class="form-input"
-                  value="<%= productToEdit.name %>"
+                  value={name}
+                  onChange={e => setName(e.target.value)}
                 />
               </div>
-              <div class="col-12 col-md-6">
-								<label for="type" class="form-label">Tipo de Cerveja:</label>
-								<select name ='id_type' class="form-label">
-									<option value="1">Stout</option>
-									<option value="2">Pilsen</option>
-									<option value="3">Lager</option>
-									<option value="4">Pale</option>
-							</select>
+              <div className="col-12 col-md-6">
+                <label htmlFor="id_product_type" className="form-label">Tipo:</label>
+                <select
+                  id="id_type"
+                  name="id_type"
+                  className="form-input"
+                  value={id_type}
+                  onChange={e => setIdProductType(e.target.value)}
+                >
+                  <option value={1}>Stout</option>
+                  <option value={2}>Pilsen</option>
+                  <option value={3}>Lager</option>
+                  <option value={4}>Pale</option>
+                </select>
               </div>
-              <div class="col-12 col-md-6">
-                <label for="price" class="form-label">Preço:</label>
+              <div className="col-12 col-md-6">
+                <label htmlFor="price" className="form-label">Preço:</label>
                 <input
                   id="price"
+                  className="form-input"
                   type="number"
                   name="price"
                   placeholder="Informe o preço do produto"
-                  class="form-input"
-                  value="<%= productToEdit.price %>"
+                  value={price}
+                  onChange={e => setPrice(e.target.value)}
                 />
               </div>
-              <div class="col-12">
-                <label for="description" class="form-label">Descrição:</label>
+              <div className="col-12">
+                <label htmlFor="description" className="form-label">Descrição:</label>
                 <textarea
                   id="description"
                   name="description"
-                  class="form-input"
-                >{/* productToEdit.description */}</textarea>
+                  className="form-input"
+                  value={description}
+                  onChange={e => setDescription(e.target.value)}
+                />
               </div>
-              <div class="col-12 col-md-6">
-								<label for="image" class="form-label">Imagem:</label>
-								<input type="file" id="image" name="image" class="form-input"/>
+							<div class="col-12 col-md-6">
+								<label htmlFor="image" className="form-label">Imagem:</label>
+								<input
+                				id="image"
+                				className="form-input"
+                				type="file"
+               					name="image"
+/* 								        onChange={e => setSelectImage(e.target.files[0])} */
+              					/>
 							</div>
-              <div class="col-12">
-                <button type="submit" class="buy-now-button">Salvar</button>
+              <div className="col-12">
+                <button
+                  className="buy-now-button"
+                >
+                  Salvar
+                </button>
               </div>
             </div>
-          </form>
+          </div>
         </div>
-      </div>
+      ) : null}
 
-           <Footer/>
-        </>
-    )
-
+      <Footer />
+    </>
+  )
 }
 export default Update

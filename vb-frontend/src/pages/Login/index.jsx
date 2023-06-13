@@ -23,7 +23,7 @@ const Login = () => {
 
       document.cookie = `auth=${response.data.token}; expires=${new Date(2100, 0, 1)}`
 
-      alert('Login realizado!')
+      alert('Você realizou o login!')
 
       navigate('/')
 

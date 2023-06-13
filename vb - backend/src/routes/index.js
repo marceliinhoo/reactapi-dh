@@ -50,7 +50,7 @@ router.post(
 router.get('/product/nossoproduto', productController.productView)
 router.get('/product/detail/:id', productController.detailEJS)
 router.post(
-  '/product',
+  '/product/nossoproduto',
   auth,
   upload.any(),
   body('name')
@@ -59,6 +59,7 @@ router.post(
   body('description')
     .notEmpty()
     .withMessage('Descrição deve ser informada!'), productController.createEJS)
+
 router.put('/product/:id', auth, upload.any(), productController.updateEJS)
 router.delete('/product/:id', auth,productController.deleteEJS)
 

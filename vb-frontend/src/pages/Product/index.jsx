@@ -21,9 +21,9 @@ const Product = () => {
   return (
     <>
       <Header />
-      <div class="destaque"> Nossos Produtos </div>
+      <div className="destaque"> Nossos Produtos </div>
 
-      <div className="container products-wrapper">
+      <div className="container products-product">
         <div className="row">
           <div className="col-12">
           </div>
@@ -35,7 +35,7 @@ const Product = () => {
                   to="/product-detail"
                   state={{ id: product.id }}
                 >
-                  <figure className="product-box_image">
+                  <figure className="product-image">
                     <img src={`http://localhost:3000/images/Produtos/${product.image}`} alt="imagen do produto" />
                   </figure>
                   <article className="product-box_data">
