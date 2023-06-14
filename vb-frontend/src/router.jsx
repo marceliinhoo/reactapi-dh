@@ -11,6 +11,7 @@ import Update from "./pages/Update"
 import Product from "./pages/Product"
 import Login from "./pages/Login"
 import CreateUser from "./pages/CreateUser"
+import Detail from "./pages/Detail"
 
 const Router = () => {
     return (
@@ -29,18 +30,18 @@ const Router = () => {
                  <Route
                 exact
                 path="/product-detail"
-                element={null}
+                element={<Detail/>}
                 />
                  <Route
                 exact
                 path="/product-create"
                 element={<Create/>}
                 />
-                  <Route
+                <Route
                 exact
                 path="/product-update"
                 element={<Update/>}
-                />
+                /> 
                 <Route
                 exact
                 path="/product/nossoproduto"

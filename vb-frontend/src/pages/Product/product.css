@@ -1,97 +1,71 @@
-/*====== Fonts ======*/
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap');
-
-
-/*====== Variables ======*/
-:root {
-  --yellow: #EAC926;
-  --dark-blue: #03264C;
-  --light-blue: #1259c3;
-  --gray: #666666;
-  --light-gray: #ebebeb;
-  --green: #39b54a;
-  --base-font-family: 'Roboto', sans-serif
-}
-
-
-/*====== Basics ======*/
-* {
-  box-sizing: border-box;
-}
-
 /*====== Products ======*/
-.products-product {
+.products-wrapper {
   margin-top: 30px;
   margin-bottom: 30px;
   background-color: black;
 }
+.col-12{
+  display: inline-block;
+  margin-right: 10px;
+  margin-left: 100px;
+}
+.product-image img{
+  width: 40%;
 
-.products-title {
-  font-size: 2.4em;
-  font-weight: 400;
-  color:  #ffffff;
-  text-align: center;
 }
 
-.product-box a {
-  display: block;
-}
+.product-box {
+  border-radius: 5px;
+  margin: 20px 0;
 
-.product-image {
-  border-bottom: 1px solid var(--light-gray);
 }
 
 .product-box_data {
   padding: 15px;
   position: relative;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
+  text-decoration: none;
 }
 
 .product-box_data h2 {
-  font-size: 2.4em;
+  font-size: 1.5em;
   font-weight: 300;
-  margin: 0;
+  margin: 10px;
+  color: white;
+  text-decoration: none;
 }
 
 .product-box_data p {
-  font-size: 1.5em;
+  font-size: 1em;
   width: 100%;
-  color: var(--gray);
+  color: white;
   margin: 0;
   height: 0;
-  transition: 300ms;
+  text-decoration: none;
 }
 
-.product-box_data i {
-  color: var(--green);
-  font-size: 1.8em;
-  width: 35px;
-  height: 35px;
-  text-align: center;
-  border: solid 1px;
-  border-radius: 50%;
-  position: absolute;
-  top: -15px;
-  right: 15px;
-  background-color: #ffffff;
+p:hover {
+  color: yellow
+}
+
+h2:hover {
+  color: yellow
+}
+
+section {
+  display: flex;
+}
+
+.destaque {
+  width: 15%;
+  margin: auto;
+  margin-top: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: 300ms;
-}
+  border: 1px solid rgb(255, 255, 255);
+  font-size: larger;
+  border-radius: 5px;
+  height: 30px;
+  color: white;
 
-.product-box:hover {
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-}
-
-.product-box:hover p {
-  height: 40px;
-  margin-top: 15px;
-}
-
-.product-box:hover i {
-  transform: rotate(360deg);
-  box-shadow: 0 0 5px var(--green);
 }

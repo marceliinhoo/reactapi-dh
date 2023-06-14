@@ -14,7 +14,7 @@ const Header = () => {
       <nav>
         <ul>
           <div>
-            <li><Link to="/home">V I K I N G S <br/> BEERHOUSE </Link></li>
+            <li><Link to="/">V I K I N G S <br/> BEERHOUSE </Link></li>
           </div>
           <div >
             <li><Link to="/aboutus">SOBRE</Link></li>
@@ -22,7 +22,7 @@ const Header = () => {
             <li><Link to="/login/minha-conta">MINHA CONTA</Link></li> 
           </div>
           <div>
-            <li><Link to="/home"><img src={`http://localhost:3000/images/Logo/Logosemfundo600x600semopacidade.png`} alt="" className="imagem-logo" width="120px" height="100px"/></Link></li>
+            <li><Link to="/"><img src={`http://localhost:3000/images/Logo/Logosemfundo600x600semopacidade.png`} alt="" className="imagem-logo" width="120px" height="100px"/></Link></li>
             <div id="pesquisa">
               <form method="GET" action="/search" className="search-form">
                 <img src={`http://localhost:3000/images/icon/lupa.png`} alt="Meus Pedidos" width="20"/>

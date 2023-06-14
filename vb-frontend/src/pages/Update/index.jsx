@@ -8,7 +8,7 @@ const Update = () => {
   const location = useLocation()
 
   const [name, setName] = useState('')
-  const [id_type, setIdProductType] = useState(1)
+  const [typeBeer, setIdProductType] = useState(1)
   const [price, setPrice] = useState(0)
   const [description, setDescription] = useState('')
   const [product, setProduct] = useState()
@@ -18,14 +18,14 @@ const Update = () => {
   }, [])
 
   const loadProduct = async () => {
-    const response = await api.get(`product/${location.state.id}`)
+    const response = await api.get(`/product/detail/${location.state.id}`)
 
     setName(response.data.name)
     setIdProductType(response.data.productType.id)
     setPrice(response.data.price)
     setDescription(response.data.description)
     setProduct(response.data)
-  }
+  } 
   return (
     <>
       <Header />
@@ -54,10 +54,10 @@ const Update = () => {
               <div className="col-12 col-md-6">
                 <label htmlFor="id_product_type" className="form-label">Tipo:</label>
                 <select
-                  id="id_type"
-                  name="id_type"
+                  id="typeBeer"
+                  name="typeBeer"
                   className="form-input"
-                  value={id_type}
+                  value={typeBeer}
                   onChange={e => setIdProductType(e.target.value)}
                 >
                   <option value={1}>Stout</option>

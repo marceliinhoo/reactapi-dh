@@ -23,13 +23,10 @@ const Product = () => {
       <Header />
       <div className="destaque"> Nossos Produtos </div>
 
-      <div className="container products-product">
+      <div className="container products-wrapper">
         <div className="row">
-          <div className="col-12">
-          </div>
-
           {products.map((product) => (
-            <div key={product.id} className="col-12 col-sm-6 col-lg-3">
+            <div key={product.id} className="col-12">
               <section className="product-box">
                 <Link
                   to="/product-detail"
