@@ -3,9 +3,13 @@ import { useLocation } from 'react-router-dom'
 import Header from "../../components/Header"
 import Footer from "../../components/Footer"
 import api from "../../services/api"
+import { getCookie } from "../../Utils"
+import { useNavigate } from "react-router-dom"
+import "./product-update-form.css"
 
 const Update = () => {
   const location = useLocation()
+  const navigate = useNavigate()
 
   const [name, setName] = useState('')
   const [typeBeer, setIdProductType] = useState(1)
@@ -19,13 +23,25 @@ const Update = () => {
 
   const loadProduct = async () => {
     const response = await api.get(`/product/detail/${location.state.id}`)
-
     setName(response.data.name)
-    setIdProductType(response.data.productType.id)
+    setIdProductType(response.data.typeBeer.id)
     setPrice(response.data.price)
     setDescription(response.data.description)
     setProduct(response.data)
   } 
+
+  const handleUpdate = async () => {
+    try {
+    await api.put(`/product/detail/${location.state.id}`, { headers: {Authorization: getCookie('auth')}})
+    alert ('Seu produto foi Alterado. Parabéns!')
+    navigate ('/product/nossoproduto')
+  
+  }catch (error){
+    alert(error.response.data.error)
+  }
+    }
+
+  
   return (
     <>
       <Header />
@@ -99,11 +115,11 @@ const Update = () => {
               					/>
 							</div>
               <div className="col-12">
-                <button
-                  className="buy-now-button"
-                >
-                  Salvar
-                </button>
+              <button type="submit" 
+								className="buy-now-button"
+								onClick={handleUpdate}>
+									Salvar
+								</button>
               </div>
             </div>
           </div>

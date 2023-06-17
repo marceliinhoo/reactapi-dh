@@ -31,7 +31,7 @@ const CreateUser = () => {
       navigate ('/')
   
     }catch (error){
-      alert('Não foi cadastrado')
+      alert(error.response.data.error)
     }
     }
 

@@ -60,7 +60,7 @@ router.post(
     .notEmpty()
     .withMessage('Descrição deve ser informada!'), productController.createEJS)
 
-router.put('/product/:id', auth, upload.any(), productController.updateEJS)
+router.put('/product/detail/:id', auth, upload.any(), productController.updateEJS)
 router.delete('/product/:id', auth,productController.deleteEJS)
 
 

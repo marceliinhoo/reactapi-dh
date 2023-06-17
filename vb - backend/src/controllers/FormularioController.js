@@ -6,9 +6,11 @@ const formularioController = {
 
   createEJS: async (req, res) => {
     const errors = validationResult(req)
+    console.log("Oiii")
     if (!errors.isEmpty())
       res.status(400).json({ error: errors.mapped() })
-    
+    console.log("Joia")
+
     try {
       const user = await User.findOne({
         where: {
@@ -28,8 +30,8 @@ const formularioController = {
           await User.create(newUser) 
 
           res.status(201).json({ msg: 'Usuário Criado com Sucesso' })
-      } else res.render('formulario', { errors: [{ msg: "Usuário já cadastrado!" }] })
-    } catch (error) {
+      }   
+    }catch (error) {
       res.status(400).json({ error })
     }
   }
