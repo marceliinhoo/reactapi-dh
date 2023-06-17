@@ -12,6 +12,7 @@ import Product from "./pages/Product"
 import Login from "./pages/Login"
 import CreateUser from "./pages/CreateUser"
 import Detail from "./pages/Detail"
+import Cart from "./pages/Cart"
 
 const Router = () => {
     return (
@@ -56,6 +57,11 @@ const Router = () => {
                 exact
                 path="/formulario"
                 element={<CreateUser/>}
+                />
+                <Route
+                exact
+                path="/carrinho"
+                element={<Cart/>}
                 />
             </Routes>
         </BrowserRouter>

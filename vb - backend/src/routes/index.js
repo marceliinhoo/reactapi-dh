@@ -6,7 +6,7 @@ const moment = require('moment');
 const mainController = require('../controllers/MainController')
 const productController = require('../controllers/ProductController')
 const loginController = require('../controllers/LoginController')
-const CarrinhoController = require('../controllers/CarrinhoController')
+const carrinhoController = require('../controllers/CarrinhoController')
 const formularioController = require ('../controllers/FormularioController')
 
 //Multer
@@ -63,5 +63,10 @@ router.post(
 router.put('/product/detail/:id', auth, upload.any(), productController.updateEJS)
 router.delete('/product/:id', auth,productController.deleteEJS)
 
+
+//Carrinho
+
+router.get("/carrinho", carrinhoController.mostraCarrinho);
+router.post("/carrinho/:id", auth, carrinhoController.adicionaProduto);
 
 module.exports = router
